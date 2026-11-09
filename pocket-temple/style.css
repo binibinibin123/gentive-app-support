@@ -1,0 +1,57 @@
+/* 산사의 하루 / Sansa — hanji, ink, cinnabar */
+:root{
+  --paper:#f3ecdc; --paper-2:#ebe2cd; --ink:#1d1a16; --ink-soft:#4a443b;
+  --cinnabar:#b23a28; --rule:#d6cab0;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Noto Serif KR",serif; font-size:17px; line-height:1.85;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(120,100,60,.05) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 80%, rgba(120,100,60,.05) 0 1px, transparent 2px);
+  background-size:7px 9px, 11px 13px;
+}
+a{color:var(--cinnabar); text-underline-offset:3px}
+.page{display:grid; grid-template-columns:200px 1fr; min-height:100vh}
+.pillar{
+  border-right:1px solid var(--rule); background:var(--paper-2);
+  display:flex; flex-direction:column; align-items:center; padding:48px 0 32px; gap:28px;
+  position:sticky; top:0; height:100vh;
+}
+.pillar h1{
+  writing-mode:vertical-rl; margin:0; font-weight:700; font-size:40px; letter-spacing:.32em; line-height:1;
+}
+.seal{
+  width:64px; height:64px; border:3px solid var(--cinnabar); color:var(--cinnabar);
+  display:grid; place-items:center; font-weight:700; font-size:15px; line-height:1.2; text-align:center;
+  transform:rotate(-4deg); border-radius:4px;
+}
+.pillar nav{writing-mode:vertical-rl; display:flex; gap:22px; font-size:15px; margin-top:auto}
+.pillar nav a{color:var(--ink-soft); text-decoration:none}
+.pillar nav a[aria-current]{color:var(--cinnabar); border-left:2px solid var(--cinnabar); padding-left:4px}
+main{padding:64px 56px 80px; max-width:1100px}
+.lead{font-size:15px; color:var(--cinnabar); letter-spacing:.2em; margin:0 0 8px}
+.title{font-size:30px; margin:0 0 6px; font-weight:700}
+.title-en{font-size:18px; color:var(--ink-soft); margin:0 0 40px; font-style:italic}
+.pair{display:grid; grid-template-columns:1fr 1fr; gap:0 48px; padding:26px 0; border-top:1px solid var(--rule)}
+.pair h2{grid-column:1/-1; margin:0 0 10px; font-size:19px; display:flex; gap:12px; align-items:baseline}
+.pair h2::before{content:""; width:10px; height:10px; background:var(--cinnabar); border-radius:50%; flex:none; transform:translateY(-2px)}
+.pair h2 span{font-weight:400; font-size:15px; color:var(--ink-soft)}
+.pair p{margin:0 0 10px}
+.pair [lang=en]{font-size:15.5px; color:var(--ink-soft); line-height:1.75}
+.intro{font-size:18px; margin:0 0 8px}
+.mail{display:inline-block; margin-top:6px; padding:8px 18px; border:1px solid var(--cinnabar); text-decoration:none; font-weight:700}
+footer{margin-top:48px; padding-top:20px; border-top:3px double var(--rule); font-size:14px; color:var(--ink-soft)}
+@media (max-width:760px){
+  body{font-size:16px}
+  .page{grid-template-columns:1fr}
+  .pillar{position:static; height:auto; flex-direction:row; flex-wrap:wrap; justify-content:flex-start; gap:14px 16px; padding:20px 16px; border-right:0; border-bottom:1px solid var(--rule)}
+  .pillar h1{writing-mode:horizontal-tb; font-size:24px; letter-spacing:.12em}
+  .seal{width:48px; height:48px; font-size:12px; order:-1}
+  .pillar nav{writing-mode:horizontal-tb; margin:0; gap:14px; font-size:14px}
+  .pillar nav a[aria-current]{border-left:0; border-bottom:2px solid var(--cinnabar); padding:0}
+  main{padding:32px 16px 56px}
+  .pair{grid-template-columns:1fr; gap:4px}
+}

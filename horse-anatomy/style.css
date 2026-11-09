@@ -1,0 +1,38 @@
+/* Hands On Horse — bottle green yard header, cream clipboard body */
+:root{
+  --green:#1f3a2e; --green-2:#2c5241; --cream:#f6f0e1; --card:#fffaf0; --ink:#1f2620; --ink-soft:#56604f;
+  --tan:#b98a4e; --rule:#e2d7bf;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--cream); color:var(--ink); font-family:"Atkinson Hyperlegible",system-ui,sans-serif; font-size:18px; line-height:1.65}
+a{color:var(--green-2); text-underline-offset:3px}
+header.yard{background:var(--green); color:var(--cream); padding:28px 16px 34px; border-bottom:6px solid var(--tan)}
+.yard-in{max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px}
+.yard h1{font-family:"Bitter",serif; font-weight:800; font-size:46px; line-height:1.05; margin:0}
+.yard p{margin:6px 0 0; color:#cfe0d4; font-size:17px}
+.yard nav{display:flex; gap:6px}
+.yard nav a{color:var(--cream); text-decoration:none; padding:8px 14px; border:1px solid #4d7562; border-radius:999px; font-size:16px}
+.yard nav a[aria-current]{background:var(--cream); color:var(--green); border-color:var(--cream); font-weight:700}
+.layout{max-width:1080px; margin:0 auto; padding:36px 16px 72px; display:grid; grid-template-columns:240px 1fr; gap:40px; align-items:start}
+.toc{position:sticky; top:20px; font-size:15px; border-left:3px solid var(--green); padding:4px 0 4px 16px}
+.toc strong{font-family:"Bitter",serif; display:block; margin-bottom:8px; font-size:16px}
+.toc a{display:block; color:var(--ink-soft); text-decoration:none; padding:3px 0}
+.toc a:hover{color:var(--green)}
+.card{background:var(--card); border:1px solid var(--rule); border-left:6px solid var(--green-2); border-radius:6px; padding:20px 24px; margin:0 0 18px}
+.card.warn{border-left-color:var(--tan)}
+h2{font-family:"Bitter",serif; font-size:22px; margin:0 0 8px; color:var(--green)}
+.card p{margin:0 0 10px}
+.card ul{margin:0 0 10px; padding-left:22px}
+.intro{font-size:20px; margin:0 0 26px; max-width:46em}
+.eff{display:inline-block; background:var(--green); color:var(--cream); font-size:14px; padding:4px 12px; border-radius:4px; margin-bottom:18px}
+footer{max-width:1080px; margin:0 auto; padding:20px 16px 40px; border-top:1px solid var(--rule); font-size:15px; color:var(--ink-soft)}
+@media (max-width:820px){
+  .layout{grid-template-columns:1fr; gap:20px; padding-top:24px}
+  .toc{position:static}
+  .yard h1{font-size:36px}
+}
+@media (max-width:480px){
+  body{font-size:17px}
+  .card{padding:16px}
+}

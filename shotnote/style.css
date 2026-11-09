@@ -1,0 +1,45 @@
+/* 주사수첩 — lined notebook paper, navy ink, red margin */
+:root{
+  --paper:#fdfcf7; --desk:#e4e1d6; --line:#c9d6ea; --margin:#d9534f; --ink:#1f3270; --ink-soft:#4d5b85; --hole:#e4e1d6;
+  --lh:32px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--desk); color:var(--ink); font-family:"Gowun Dodum","Noto Sans KR",sans-serif; font-size:17px; line-height:var(--lh); padding:32px 16px 56px}
+a{color:var(--ink); text-decoration-color:var(--margin); text-underline-offset:4px}
+.notebook{
+  max-width:880px; margin:0 auto; position:relative; background-color:var(--paper);
+  background-image:linear-gradient(transparent calc(var(--lh) - 1px), var(--line) calc(var(--lh) - 1px));
+  background-size:100% var(--lh); background-position:0 27px;
+  box-shadow:0 1px 0 #cfcbbd, 0 12px 28px rgba(40,40,60,.18); border-radius:2px 8px 8px 2px;
+  padding:var(--lh) 32px calc(var(--lh) * 2) 0;
+}
+.notebook::before{content:""; position:absolute; top:0; bottom:0; left:150px; width:2px; background:var(--margin); opacity:.75}
+.holes{position:absolute; left:22px; top:64px; bottom:64px; display:flex; flex-direction:column; justify-content:space-around}
+.holes i{display:block; width:20px; height:20px; border-radius:50%; background:var(--hole); box-shadow:inset 0 2px 3px rgba(0,0,0,.18)}
+.entry{display:grid; grid-template-columns:150px 1fr; margin:0}
+.tag{font-family:"Nanum Pen Script",cursive; font-size:24px; color:var(--margin); text-align:right; padding-right:16px; line-height:var(--lh)}
+.text{padding-left:24px}
+.text p, .text ul{margin:0 0 var(--lh)}
+.text ul{padding-left:20px}
+h1{font-size:30px; line-height:calc(var(--lh) * 2); margin:0; font-weight:700}
+h2{font-size:19px; line-height:var(--lh); margin:0; font-weight:700}
+.top{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:0 20px; margin-bottom:var(--lh)}
+.top nav{display:flex; gap:16px; font-size:16px}
+.top nav a{text-decoration:none; color:var(--ink-soft)}
+.top nav a[aria-current]{color:var(--ink); font-weight:700; background:linear-gradient(transparent 60%, #ffe58a 60%)}
+.sub{color:var(--ink-soft); margin:0}
+.note{background:linear-gradient(transparent 55%, #fff1a8 55%)}
+.mail{font-weight:700}
+footer.entry{color:var(--ink-soft); font-size:15px}
+@media (max-width:640px){
+  body{padding:16px 8px 40px; font-size:16px}
+  .notebook{padding-right:16px}
+  .notebook::before{left:44px}
+  .holes{left:10px}
+  .holes i{width:14px; height:14px}
+  .entry{grid-template-columns:44px 1fr}
+  .tag{grid-column:2; text-align:left; padding:0 0 0 12px; font-size:22px}
+  .text{grid-column:2; padding-left:12px}
+  h1{font-size:25px}
+}

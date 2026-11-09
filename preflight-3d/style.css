@@ -1,0 +1,60 @@
+/* Airworthy? — kneeboard paper on a navy board, stencil headings */
+:root{
+  --board:#18243c; --board-2:#223152; --paper:#f1e8d0; --paper-line:#d9cba6;
+  --ink:#1b2b4b; --ink-soft:#4b5a78; --red:#b3261e; --green:#2f6b3a; --steel:#a7adb6;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--board); color:var(--ink);
+  font-family:"Barlow",system-ui,sans-serif; font-size:17px; line-height:1.6;
+  background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.025) 0 2px, transparent 2px 9px);
+  padding:40px 16px 64px;
+}
+a{color:var(--ink); text-decoration-thickness:2px; text-underline-offset:3px}
+.board{max-width:860px; margin:0 auto; position:relative}
+.clip{
+  position:relative; z-index:2; width:220px; height:54px; margin:0 auto -26px;
+  background:linear-gradient(#d3d7dd,#8f959e); border-radius:10px 10px 18px 18px;
+  box-shadow:0 3px 0 #5e636b, 0 6px 14px rgba(0,0,0,.35);
+}
+.clip::after{content:""; position:absolute; left:50%; top:12px; width:56px; height:14px; margin-left:-28px; border-radius:7px; background:#6c727b}
+.sheet{
+  background:var(--paper); border-radius:6px; padding:56px 40px 36px;
+  box-shadow:0 18px 40px rgba(0,0,0,.45);
+  background-image:linear-gradient(var(--paper-line) 1px, transparent 1px);
+  background-size:100% 34px; background-position:0 22px;
+}
+.strip{
+  display:flex; flex-wrap:wrap; gap:6px 24px; justify-content:space-between;
+  font-family:"Share Tech Mono",monospace; font-size:14px; letter-spacing:.06em; color:var(--ink-soft);
+  border-bottom:2px solid var(--ink); padding-bottom:10px; margin-bottom:22px; background:var(--paper);
+}
+.strip nav{display:flex; gap:18px}
+.strip nav a{text-decoration:none}
+.strip nav a[aria-current]{color:var(--paper); background:var(--ink); padding:0 6px}
+h1{
+  font-family:"Barlow Condensed",sans-serif; font-weight:800; text-transform:uppercase;
+  font-size:56px; line-height:.95; letter-spacing:.02em; margin:0;
+}
+h1 em{font-style:normal; color:var(--red)}
+.sub{font-family:"Share Tech Mono",monospace; font-size:15px; margin:10px 0 30px; color:var(--ink-soft)}
+.item{display:grid; grid-template-columns:110px 1fr; gap:4px 22px; padding:16px 0; border-top:1px dashed var(--ink-soft); background:var(--paper)}
+.tag{font-family:"Share Tech Mono",monospace; font-size:14px; color:var(--red); padding-top:4px; letter-spacing:.04em}
+.tag.ok{color:var(--green)}
+h2{font-family:"Barlow Condensed",sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:.04em; font-size:24px; margin:0 0 4px}
+.item p{margin:0 0 8px}
+.stamp{
+  display:inline-block; font-family:"Barlow Condensed",sans-serif; font-weight:800; font-size:22px; letter-spacing:.08em;
+  color:var(--green); border:3px solid var(--green); padding:2px 12px; transform:rotate(-3deg); margin:4px 0 8px;
+}
+.mono{font-family:"Share Tech Mono",monospace}
+footer{margin-top:26px; padding-top:14px; border-top:2px solid var(--ink); font-family:"Share Tech Mono",monospace; font-size:13px; color:var(--ink-soft); display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; background:var(--paper)}
+@media (max-width:640px){
+  body{padding:24px 10px 40px; font-size:16px}
+  .sheet{padding:44px 16px 24px}
+  .clip{width:150px; height:44px; margin-bottom:-22px}
+  h1{font-size:40px}
+  .item{grid-template-columns:1fr}
+  .tag{padding:0}
+}
